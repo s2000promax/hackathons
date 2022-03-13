@@ -4,7 +4,6 @@ import {setToDefaultDOM} from '../utils';
 
 export class PianoModule extends Module {
   trigger() {
-    console.log('###-Piano-###')
     //Очистка DOM-дерева от предыдущего модуля
     setToDefaultDOM();
 

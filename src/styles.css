@@ -178,3 +178,40 @@ body {
 .keys:hover .hints {
     opacity: 1;
 }
+
+
+/* Quote module */
+
+.quote-block {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -100px;
+    right: 20px;
+    padding: 10px 10px;
+    border-radius: 30px;
+    color: whitesmoke;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    transform: scale(0.2, 0.2);
+    animation-name: orderlinks;
+    animation-duration: 7s;
+    animation-fill-mode: forwards;
+
+}
+
+.quote-text {
+    margin-bottom: 20px;
+}
+
+.img-author {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    background: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
