@@ -230,3 +230,81 @@ body {
         transform: scale(0.2, 0.2);
     }
 }
+
+/* shape module start*/
+
+.circle, .oval {
+    position: absolute;
+    border-radius: 50%;
+    animation: show 1.5s;
+}
+
+.square, .rectangle {
+    position: absolute;
+    font-size: 0;
+    animation: show 1.5s;
+}
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    animation: show 1.5s;
+}
+
+.parallelogram {
+    position:absolute;
+    animation: show 1s;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+
+}
+
+.trapezoid {
+    position: absolute;
+    height: 0;
+    font-size: 0;
+    animation: show 1.5s;
+}
+
+@keyframes show {
+    from {opacity: 0; transform: translateX(-1000px)} to {opacity: 1; transform: translateX(0)}
+}
+/* shape module end*/
+
+/* Game Hulk module start*/
+td {
+    border: 1px solid #aaa;
+    width: 40px;
+    height: 40px;
+}
+.point {
+    background-image: url(https://avatars.mds.yandex.net/get-zen-logos/1540393/pub_5b1545b50422b4ec7b2bddb1_5f6b6993108c12349d0a2c48/xxh);
+    background-size: 100%;
+}
+.box {
+    background-image: url(https://st2.depositphotos.com/1006187/7519/i/950/depositphotos_75194639-stock-photo-close-up-of-wooden-box.jpg);
+    background-size: 100%;
+}
+.user {
+    background-image: url(https://pngimg.com/uploads/hulk/hulk_PNG65.png);
+    background-size: 100%;
+}
+.wall {
+    background-image: url(https://otdelkaexp.ru/wp-content/uploads/2018/11/kalkulyator-raschjota-penoblokov-dlya-stroitelstva-doma2.jpg);
+    background-size: 100%;
+}
+table {
+    margin: 40px auto;
+}
+.signUnderTable {
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+}
+.active {
+    border: 2px solid black;
+}
+/* Game Hulk module end*/

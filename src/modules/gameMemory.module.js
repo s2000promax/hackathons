@@ -1,7 +1,7 @@
 import {Module} from '../core/module'
 import {random, setToDefaultDOM} from '../utils';
 
-export class GameModule extends Module {
+export class GameMemoryModule extends Module {
   trigger() {
     //Очистка DOM-дерева от предыдущего модуля
     setToDefaultDOM();

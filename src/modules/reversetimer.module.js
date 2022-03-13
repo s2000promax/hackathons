@@ -1,10 +1,11 @@
-  import {Module} from '../core/module'
-  import {setToDefaultDOM} from '../utils';
+//Copyright by Bogdan
+import {Module} from '../core/module'
+import {setToDefaultDOM} from '../utils';
 
-  import src_button_on from '../../assets/ui/Button-type_1-On.png'
-  import src_button_off from '../../assets/ui/Button-type_1-Off.png'
+import src_button_on from '../../assets/ui/Button-type_1-On.png'
+import src_button_off from '../../assets/ui/Button-type_1-Off.png'
 
-  export class ReverseTimerModule extends Module {
+export class ReverseTimerModule extends Module {
     trigger() {
       //Очистка DOM-дерева от предыдущего модуля
       setToDefaultDOM();
