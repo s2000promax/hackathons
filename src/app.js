@@ -15,8 +15,8 @@ class App {
     //Регистрация модулей
     this.type_1 = 'type-backgroundModule';
     this.type_2 = 'type-clicksModule';
-    this.type_3 = 'type-gameMemoryModule';
-    this.type_4 = 'type-gameHulkModule';
+    this.type_3 = 'type-gameHulkModule';
+    this.type_4 = 'type-gameMemoryModule';
     this.type_5 = 'type-pianoModule';
     this.type_6 = 'type-quoteModule';
     this.type_7 = 'type-reverseTimerModule';

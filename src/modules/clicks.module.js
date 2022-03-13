@@ -1,6 +1,6 @@
 //Copyright by Bogdan
 import {Module} from '../core/module'
-import {random, setToDefaultDOM} from '../utils';
+import {setToDefaultDOM} from '../utils';
 
 export class ClicksModule extends Module {
   trigger() {
@@ -9,7 +9,6 @@ export class ClicksModule extends Module {
 
     let singleCounter = 0;
     let dbCounter = 0;
-    let adjustInterval = 400;
 
     //Контейнер модуля
     const divContainer = document.createElement('div');
@@ -26,40 +25,6 @@ export class ClicksModule extends Module {
     label.append(input, labelAfter);
     divContainer.append(label)
 
-    const radioGroupDiv = document.createElement('div');
-    radioGroupDiv.className = 'radioGroup';
-    const input1 = document.createElement('input');
-    input1.type = 'radio';
-    input1.name = 'speed'
-    input1.id = 'fast';
-    input1.value = String(200);
-    const label1 = document.createElement('label');
-    label1.innerText = 'fast';
-    label1.htmlFor = 'fast';
-
-    const input2 = document.createElement('input');
-    input2.type = 'radio';
-    input2.name = 'speed'
-    input2.id = 'middle';
-    input2.checked = true;
-    input2.value = String(400);
-    const label2 = document.createElement('label');
-    label2.innerText = 'middle';
-    label2.htmlFor = 'middle';
-
-    const input3 = document.createElement('input');
-    input3.type = 'radio';
-    input3.name = 'speed'
-    input3.id = 'slow';
-    input3.value = String(600);
-    const label3 = document.createElement('label');
-    label3.innerText = 'slow';
-    label3.htmlFor = 'slow';
-
-    radioGroupDiv.append(input1, label1, input2, label2, input3, label3);
-
-    divContainer.append(radioGroupDiv);
-
     const buttonDiv = document.createElement('div');
     const button = document.createElement('button');
     button.style.width = '80px';
@@ -67,45 +32,34 @@ export class ClicksModule extends Module {
     button.innerText = 'Старт!'
 
     let timeCounter = input.value;
-    let tempClick = 0;
+    let isStart = true;
+
     button.onclick = function () {
       divContainer.addEventListener('click', event => {
 
-        //Уточняем подстройку под длительность двойного клика
-        const radioGroup = document.querySelector('.radioGroup')
-        radioGroup.childNodes.forEach(item => {
-          if (item.checked) {
-            adjustInterval = item.value;
-          }
-        })
+        singleCounter += 1;
 
-        tempClick += 1;
-        if (tempClick >= 2) {
-          dbCounter += 1;
-          document.querySelector('.spanDoubleCounter').textContent = String(dbCounter);
-        } else {
-          singleCounter += 1;
-          document.querySelector('.spanSingleCounter').textContent = String(singleCounter);
+        if (isStart) {
+          singleCounter = 0; //Клик на кнопку не всчёт
 
-        }
-
-        const timerToClicks = setInterval( () => {
-          tempClick = 0;
-          console.log('TimeInterval')
-        }, adjustInterval)
-
-        const timerTotal = setInterval( () => {
-          if (timeCounter > 0 ) {
-            timeCounter -= 1;
-            button.innerText = String(timeCounter)
-            if (timeCounter === 0) {
-              clearInterval(timerToClicks);
-              console.log('dbCounter:', dbCounter);
+          const timerTotal = setInterval(() => {
+            if (timeCounter > 0) {
+              timeCounter -= 1;
+              button.innerText = String(timeCounter)
+              if (timeCounter === 0) {
+                document.querySelector('.spanSingleCounter').textContent = String(singleCounter);
+                document.querySelector('.spanDoubleCounter').textContent = String(dbCounter);
+                clearInterval(timerTotal)
+              }
             }
-          }
 
-        }, 1000)
-
+          }, 1000);
+        }
+        isStart = false;
+      });
+      divContainer.addEventListener('dblclick', event => {
+        dbCounter += 1;
+        singleCounter -= 2;
       });
     }
 
@@ -129,10 +83,6 @@ export class ClicksModule extends Module {
 
     divContainer.append(buttonDiv)
     divContainer.append(resultBlock);
-
-
-
-
 
     document.body.append(divContainer);
   }

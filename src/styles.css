@@ -308,3 +308,159 @@ table {
     border: 2px solid black;
 }
 /* Game Hulk module end*/
+
+/* Reversetimer module start*/
+.reverse-container {
+    width: 500px;
+    height: 300px;
+    margin: 250px auto 0 auto;
+    border: black solid 3px;
+    text-align: center;
+    background-color: #c9c8c8;
+    border-radius: 20px;
+}
+
+.image-container {
+    position: absolute;
+    width: 170px;
+    height: 80px;
+    margin: 50px 0 0 -220px;
+    border-radius: 40px;
+
+}
+
+.input-numbersTimer {
+    position: absolute;
+    border-radius: 10px;
+    margin: 55px 0 0 -10px;
+    width: 150px;
+    height: 75px;
+    text-align: center;
+    font-size: 30px;
+    background-color: #ffffad;
+
+}
+
+.span-second {
+    position: absolute;
+    margin: 75px 0 0 165px;
+    font-size: 38px;
+}
+
+.span-left {
+    position: absolute;
+    margin: 190px 0 0 -220px;
+    font-size: 38px;
+}
+
+.span-meaning {
+    position: absolute;
+    margin: 190px 0 0 50px;
+    font-size: 38px;
+    color: crimson;
+
+}
+
+.span-leftSecond {
+    position: absolute;
+    margin: 190px 0 0 165px;
+    font-size: 38px;
+}
+
+* Memory Game */
+.info{
+    margin: 25px 0px;
+    font-size: 25px;
+}
+
+
+.title-game {
+    text-align: center;
+    line-height: 1.4;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    transition: margin 0.5s ease-out;
+    background: linear-gradient(90deg, #29323c 0%, #485563 100%);
+}
+
+.hide {
+    opacity: 0;
+}
+
+.primary {
+    color: #16d9e3;
+    text-align: center;
+}
+
+.record {
+    color: #cedb56;
+}
+
+.board {
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 20px;
+    position: relative;
+    height: 700px;
+    width: 700px;
+    background: linear-gradient(118.38deg, #29323c -4.6%, #485563 200.44%);
+    box-shadow: -8px -8px 20px #2a333d, 10px 7px 20px #475462;
+    border-radius: 30px;
+    overflow: hidden;
+    justify-items: center;
+    align-items: center;
+}
+
+.board.finish {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    position: relative;
+    grid-gap: 5px;
+    height: 75vh;
+    width: 500px;
+    background: linear-gradient(118.38deg, #29323c -4.6%, #485563 200.44%);
+    box-shadow: -8px -8px 20px #2a333d, 10px 7px 20px #475462;
+    border-radius: 30px;
+    overflow: hidden;
+    justify-items: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.pictur {
+    background: url(../assets/imgMemoryGame/result.jpg) center / 100% no-repeat;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid #76cdd8;
+    border-radius: 100px;
+    padding: 5px;
+    transition: 1s;
+}
+
+
+.hover {
+    pointer-events: none;
+    transition: transform 0.5s;
+    transform: rotateY(360deg);
+}
+
+.end {
+    pointer-events: none;
+}
+
+.card {
+    position: relative;
+    perspective: 1000px;
+    border: 1px solid #fff;
+}
+
+/* Memory Game and */
