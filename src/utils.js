@@ -15,7 +15,9 @@ export const getRandomColor = () => {
   return color;
 }
 
-export const setToDefaultDOM =() => {
-  const allDOM = document.querySelectorAll('body');
-  console.log('DOM', allDOM);
+export const setToDefaultDOM = () => {
+  const divContainer = document.querySelector('.div-container');
+  if (!!divContainer) {
+    divContainer.remove();
+  }
 }

@@ -1,7 +1,7 @@
 import {Module} from '../core/module'
 import {setToDefaultDOM} from '../utils';
 
-export class ShapeModule extends Module {
+export class ReverseTimerModule extends Module {
   trigger() {
     //Очистка DOM-дерева от предыдущего модуля
     setToDefaultDOM();

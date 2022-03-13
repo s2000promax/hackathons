@@ -1,7 +1,7 @@
 import {Module} from '../core/module'
-import {setToDefaultDOM} from '../utils';
+import {random, setToDefaultDOM} from '../utils';
 
-export class ShapeModule extends Module {
+export class GameModule extends Module {
   trigger() {
     //Очистка DOM-дерева от предыдущего модуля
     setToDefaultDOM();
@@ -10,7 +10,7 @@ export class ShapeModule extends Module {
     const divContainer = document.createElement('div');
     divContainer.className = 'div-container';
 
-    //Размещаем код модуля тут
+   //Размещаем код модуля тут
 
     document.body.append(divContainer);
   }
