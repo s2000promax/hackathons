@@ -3,6 +3,32 @@ import {Module} from '../core/module'
 import {random, setToDefaultDOM} from '../utils';
 
 export class QuoteModule extends Module {
+  #divContainer
+  #container
+  #imgAuthor
+  #titleQuote
+  #titleAuthor
+
+  constructor() {
+    // тут передаю тип, и название к родительскому классу
+    super('type-quoteModule', 'Цитата')
+    //Контейнер модуля (единый для всех модулей)
+    this.#divContainer = document.createElement('div');
+    this.#divContainer.className = 'div-container';
+
+    this.#container = document.createElement('div')
+    this.#container.className = 'quote-block'
+
+    this.#imgAuthor = document.createElement('div')
+    this.#imgAuthor.className = 'img-author'
+
+    this.#titleQuote = document.createElement('h2')
+    this.#titleQuote.className = 'quote-text'
+
+    this.#titleAuthor = document.createElement('p')
+    this.#titleAuthor.className = 'author-text'
+  }
+
   trigger() {
     //Очистка DOM-дерева от предыдущего модуля
     setToDefaultDOM();
@@ -20,35 +46,20 @@ export class QuoteModule extends Module {
       authorImg = 'randomimg'
     }
 
-    //Контейнер модуля (единый для всех модулей)
-    const divContainer = document.createElement('div');
-    divContainer.className = 'div-container';
+    this.#imgAuthor.style.backgroundImage = `url(../../assets/img/${authorImg}.jpg)`
 
-    const container = document.createElement('div')
-    container.className = 'quote-block'
+    this.#titleQuote.textContent = quoteText
 
-    const imgAuthor = document.createElement('div')
-    imgAuthor.className = 'img-author'
+    this.#titleAuthor.textContent = quoteAuthor
 
-    const titleQuote = document.createElement('h2')
-    titleQuote.className = 'quote-text'
+    this.#container.append(this.#imgAuthor, this.#titleQuote, this.#titleAuthor)
 
-    const titleAuthor = document.createElement('p')
-    titleAuthor.className = 'author-text'
+    this.#divContainer.append(this.#container)
 
-   imgAuthor.style.backgroundImage = `url(../../assets/img/${authorImg}.jpg)`
-
-    titleQuote.textContent = quoteText
-
-    titleAuthor.textContent = quoteAuthor
-
-    container.append(imgAuthor, titleQuote, titleAuthor)
-
-    divContainer.append(container)
-
-    document.body.append(divContainer);
+    document.body.append( this.#divContainer);
   }
 
+  //Получение с сервера массива цитат
   addRandomQuote(){
     const result = fetch('https://type.fit/api/quotes');
 
