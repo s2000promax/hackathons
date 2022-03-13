@@ -18,6 +18,7 @@ export class GameHulkModule extends Module {
         <button class="userBtn">Set User</button>
         <button class="boxBtn">Add Box</button>
         <button class="pointBtn">Add Point</button>
+        <span>(Используйте стрелки клавиатуры для управления)</span>
         <h3><span class="massege"></span><a href="#">Cancel</a> </h3>
         <table></table>
         <div class="signUnderTable">

@@ -85,7 +85,7 @@ export class GameMemoryModule extends Module {
   finishGame() {
     const board = document.querySelector('#board');
     console.log(score)
-    localStorage.setItem(`${Math.random()}`, `${score}`);
+    localStorage.setItem(`${Math.random()}`, `${score + 1}`);
     board.classList.add('finish');
     board.innerHTML = `<h1 class="title-game" >Ваш счет: <span class="primary">${
       score - 1

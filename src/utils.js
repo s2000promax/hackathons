@@ -7,6 +7,11 @@ export const setToDefaultDOM = () => {
   if (!!divContainer) {
     divContainer.remove();
   }
+
+  const canvas = document.querySelector('canvas');
+  if (!!canvas) {
+    canvas.remove();
+  }
 }
 
 // 2 класса для модуля game Hulk
