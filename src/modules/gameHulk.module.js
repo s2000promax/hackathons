@@ -1,3 +1,4 @@
+//Copyright by Evgeny
 import {Module} from '../core/module'
 import {setToDefaultDOM} from '../utils';
 import {Controller} from '../utils';

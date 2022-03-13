@@ -1,3 +1,4 @@
+//Copyright by Bogdan
 import {Module} from '../core/module'
 import {random, setToDefaultDOM} from '../utils';
 
